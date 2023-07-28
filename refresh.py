@@ -79,7 +79,7 @@ def find_docker_compose_files(directory):
     docker_compose_files = []
     for root, _, files in os.walk(directory):
         for file in files:
-            if file == "docker-compose.yml":
+            if file == "docker-compose.yml" or file == "docker-compose.yaml": #this accept docker-compose.yaml fileextension too
                 docker_compose_files.append(os.path.join(root, file))
     return docker_compose_files
 
